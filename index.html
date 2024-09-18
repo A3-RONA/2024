@@ -4,6 +4,27 @@
 <title>A3RONA</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="Qstyle.css" />
+  <style>
+    /* 전체 화면에서 배경 이미지를 전체에 맞추는 기본 설정 */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+
+    /* 휴대폰 화면에 대한 반응형 디자인 */
+    @media only screen and (max-width: 768px) {
+      body {
+        background-size: contain; /* 이미지가 화면에 맞게 축소되지만 비율은 유지 */
+        background-position: center; /* 이미지가 가운데 정렬 */
+        background-attachment: scroll; /* 스크롤할 때 배경이 함께 움직임 */
+      }
+    }
+  </style>
 </head>
 <body>
 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
