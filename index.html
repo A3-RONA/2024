@@ -4,29 +4,47 @@
 <title>A3RONA</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="Qstyle.css" />
-<!--
-  <style>
-    /* 전체 화면에서 배경 이미지를 전체에 맞추는 기본 설정 */
-    body {
-      margin: 0;
-      padding: 0;
-      background-image: url('bg.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
-    }
+<style>
+        /* 기본 스타일: 이미지들을 가로로 배치 */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* 이미지 수직 중앙 정렬 */
+            gap: 0; /* 이미지 간격 0 */
+            flex-wrap: wrap; /* 화면이 작아지면 자동으로 줄바꿈 */
+        }
 
-    /* 휴대폰 화면에 대한 반응형 디자인 */
-    @media only screen and (max-width: 768px) {
-      body {
-        background-size: contain; /* 이미지가 화면에 맞게 축소되지만 비율은 유지 */
-        background-position: center; /* 이미지가 가운데 정렬 */
-        background-attachment: scroll; /* 스크롤할 때 배경이 함께 움직임 */
-      }
-    }
-  </style>
--->
+        .image-container img {
+            width: 100%;
+            max-width: 100%; /* 이미지 최대 크기를 제한 */
+            height: auto;
+            display: block;
+            vertical-align: middle; /* 이미지의 수직 정렬을 중앙으로 */
+        }
+
+        /* 가로로 배치되었을 때 이미지를 50%씩 배치 */
+        @media (min-width: 601px) {
+            .image-container {
+                flex-direction: row; /* 가로 방향으로 이미지 배치 */
+            }
+
+            .image-container img {
+                flex-basis: 50%; /* 각 이미지가 50% 너비를 차지 */
+                min-width: 50%; /* 최소 너비를 50%로 설정 */
+            }
+        }
+
+        /* 세로로 배치되었을 때 이미지가 화면을 꽉 채움 */
+        @media (max-width: 600px) {
+            .image-container {
+                flex-direction: column; /* 세로 방향으로 이미지 배치 */
+            }
+
+            .image-container img {
+                flex-basis: 100%; /* 전체 화면을 차지하도록 100% 설정 */
+            }
+        }
+    </style>
 </head>
 <body>
 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -48,8 +66,10 @@
 		</td></tr>
 		<tr><td>&nbsp;</td></tr>
 		<tr><td>
-		
-		<img src="Picture1.jpg" border=0 width=80%>
+			    <div class="image-container">
+        			<img src="Picture1.jpg" alt="Image 1">
+        			<img src="Picture2.jpg" alt="Image 2">
+    			</div>
 		</td></tr>
 		<tr><td><hr></td></tr>
 		<tr><td> Contact: jokyubong@sogang.ac.kr </td></tr>
