@@ -1,80 +1,119 @@
-
-<HTML>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
 <title>A3RONA</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+    /* 전체 레이아웃 및 이미지 관련 스타일 */
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* 이미지 수직 중앙 정렬 */
+        gap: 0; /* 이미지 간격 0 */
+        flex-wrap: wrap; /* 화면이 작아지면 자동으로 줄바꿈 */
+    }
+
+    .image-container img {
+        width: 100%;
+        max-width: 100%; /* 이미지 최대 크기를 제한 */
+        height: auto;
+        display: block;
+        vertical-align: middle; /* 이미지의 수직 정렬을 중앙으로 */
+    }
+
+    /* 가로로 배치되었을 때 이미지를 50%씩 배치 */
+    @media (min-width: 601px) {
         .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center; /* 이미지 수직 중앙 정렬 */
-            gap: 0; /* 이미지 간격 0 */
-            flex-wrap: wrap; /* 화면이 작아지면 자동으로 줄바꿈 */
+            flex-direction: row; /* 가로 방향으로 이미지 배치 */
         }
 
         .image-container img {
-            width: 100%;
-            max-width: 100%; /* 이미지 최대 크기를 제한 */
-            height: auto;
-            display: block;
-            vertical-align: middle; /* 이미지의 수직 정렬을 중앙으로 */
+            flex-basis: 50%; /* 각 이미지가 50% 너비를 차지 */
+            min-width: 50%; /* 최소 너비를 50%로 설정 */
+        }
+    }
+
+    /* 세로로 배치되었을 때 이미지가 화면을 꽉 채움 */
+    @media (max-width: 600px) {
+        .image-container {
+            flex-direction: column; /* 세로 방향으로 이미지 배치 */
         }
 
-        /* 가로로 배치되었을 때 이미지를 50%씩 배치 */
-        @media (min-width: 601px) {
-            .image-container {
-                flex-direction: row; /* 가로 방향으로 이미지 배치 */
-            }
-
-            .image-container img {
-                flex-basis: 50%; /* 각 이미지가 50% 너비를 차지 */
-                min-width: 50%; /* 최소 너비를 50%로 설정 */
-            }
+        .image-container img {
+            flex-basis: 100%; /* 전체 화면을 차지하도록 100% 설정 */
         }
+    }
 
-        /* 세로로 배치되었을 때 이미지가 화면을 꽉 채움 */
-        @media (max-width: 600px) {
-            .image-container {
-                flex-direction: column; /* 세로 방향으로 이미지 배치 */
-            }
+    /* 메뉴가 한 줄로 나올 수 있도록 설정 */
+    #Qmenu ul {
+        display: flex;
+        justify-content: space-around; /* 메뉴 항목들을 균등하게 배치 */
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
 
-            .image-container img {
-                flex-basis: 100%; /* 전체 화면을 차지하도록 100% 설정 */
-            }
+    #Qmenu li {
+        margin: 0;
+        padding: 10px;
+    }
+
+    #Qmenu a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #000;
+    }
+
+    /* 제목 스타일 */
+    h1 {
+        font-size: 2.5em; /* 기본 크기 */
+        text-align: center;
+    }
+
+    /* 작은 화면에서 제목 크기 조정 */
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 1.8em; /* 작은 화면에서는 제목 폰트 크기 축소 */
         }
-    </style>
-<link rel="stylesheet" type="text/css" href="Qstyle.css" />
+    }
+</style>
+
 </head>
 <body>
-	<table width="100%" border="0" cellpadding="0" cellspacing="0">
-		<tr>
-				<td><h1>Asia 3 Round Table on Nucleic Acids</h1></td>
-		<tr>
-		<tr><td><hr style="border: solid 1px #dcdcdc">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td><h1>Asia 3 Round Table on Nucleic Acids</h1></td>
+        <tr>
+        <tr><td><hr style="border: solid 1px #dcdcdc"></td></tr>
 
-	        <div class="Qstyle" id="Qmenu">
-	                <ul>
-						<li><a href="index.html">General Info</a></li>
-						<li><a href="Program.htm">Program</a></li>
-						<li><a href="abstract.html">Abstracts</a></li>				
-	                             		<li><a href="venue.html">Hotel & Travel</a></li>
-						<li><a href="photo.html">Photos</a></li>
-						<!--<li><a href="committee.html">Committee</a></li>-->
-	                </ul>
-	        </div>
-		</td></tr>
-		<tr><td>&nbsp;</td></tr>
-		<tr><td>
-			    <div class="image-container">
-        			<img src="PictureL.jpg">
-        			<img src="PictureR.jpg">
-    			</div>
-		</td></tr>
-		<tr><td><hr></td></tr>
-		<tr><td> Contact: jokyubong@sogang.ac.kr </td></tr>
-	</table>
+        <tr>
+            <td>
+                <div id="Qmenu">
+                    <ul>
+                        <li><a href="index.html">General Info</a></li>
+                        <li><a href="Program.htm">Program</a></li>
+                        <li><a href="abstract.html">Abstracts</a></li>                
+                        <li><a href="venue.html">Hotel & Travel</a></li>
+                        <li><a href="photo.html">Photos</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        
+        <tr><td>&nbsp;</td></tr>
 
+        <tr><td>
+            <div class="image-container">
+                <img src="PictureL.jpg">
+                <img src="PictureR.jpg">
+            </div>
+        </td></tr>
+        
+        <tr><td><hr></td></tr>
+
+        <tr><td> Contact: jokyubong@sogang.ac.kr </td></tr>
+    </table>
 </body>
-</HTML>
+</html>
