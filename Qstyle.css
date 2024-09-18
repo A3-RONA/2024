@@ -1,0 +1,93 @@
+body { font-family: "Myriad Pro", Arial, sans-serif; }
+
+.Qstyle{
+width: 99%;
+font-weight: normal;
+}
+
+.Qstyle:after{ /*Add margin between menu and rest of content in Firefox*/
+content: "."; 
+display: block; 
+height: 0; 
+clear: both; 
+visibility: hidden;
+}
+
+.Qstyle ul{
+border: 0px solid white;
+width: 99%;
+color: white;
+background: white;
+padding: 5px 0;
+margin: 2px;
+font-size: 15pt;
+text-align: left; /*set value to "left", "center", or "right"*/
+}
+
+.Qstyle ul li{
+display: inline;
+margin-left: 20px;
+}
+
+.Qstyle ul li a{
+color: black;
+background: none;
+padding: 5px 10px;
+margin: 0;
+text-decoration: none;
+}
+
+.Qstyle ul li a:hover{
+color: #787878;
+}
+
+hr{
+height: 0px;
+color: #880000;
+background-color: white;
+}
+
+h2{
+color: #880000;
+background-color: white;
+font-weight: bold;
+}
+
+h3{
+color: #880000;
+background-color: white;
+font-weight: bold;
+}
+
+h5{
+color: #880000;
+background-color: white;
+}
+
+.Qtable {
+border: 1px solid white;
+border-collapse: collapse;
+text-align: left;
+}
+
+.Qtable td {
+border: 1px solid #880000;
+padding-right: 5px;
+}
+.Qtable tr th{
+padding-right: 15px;
+text-align: left;
+color: white;
+background-color: white;
+}
+
+.abstractView li div{
+display: block;
+color: black;
+background-color: white;
+font-weight: normal;
+}
+
+.imageready td img {
+display: block;
+}
